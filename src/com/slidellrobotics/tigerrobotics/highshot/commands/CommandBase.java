@@ -3,7 +3,8 @@ package com.slidellrobotics.tigerrobotics.highshot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.slidellrobotics.tigerrobotics.highshot.OI;
-import com.slidellrobotics.tigerrobotics.highshot.subsystems.ExampleSubsystem;
+import com.slidellrobotics.tigerrobotics.highshot.subsystems.DriveTrain;
+import com.slidellrobotics.tigerrobotics.highshot.subsystems.Transmission;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -15,7 +16,8 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     // Create a single static instance of all of your subsystems
-    public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    public static DriveTrain driveTrain = new DriveTrain();
+    public static Transmission transmission = new Transmission();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -26,7 +28,7 @@ public abstract class CommandBase extends Command {
         oi = new OI();
 
         // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(exampleSubsystem);
+        
     }
 
     public CommandBase(String name) {

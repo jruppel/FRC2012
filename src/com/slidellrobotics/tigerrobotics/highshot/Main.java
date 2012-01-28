@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import com.slidellrobotics.tigerrobotics.highshot.commands.CommandBase;
-import com.slidellrobotics.tigerrobotics.highshot.commands.ExampleCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,7 +30,6 @@ public class Main extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
 
         // Initialize all subsystems
         CommandBase.init();
