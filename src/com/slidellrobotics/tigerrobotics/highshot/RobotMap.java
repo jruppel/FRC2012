@@ -23,5 +23,6 @@ public class RobotMap {
     public static final int gearSolinoid = 1;
     public static final int ballFeedMotor = 3;
     public static final int fireButton = 1;
-    public static final int gearShiftButton = 1;
+    public static final int highGearShiftButton = 1;
+    public static final int lowGearShiftButton = 1;
 }

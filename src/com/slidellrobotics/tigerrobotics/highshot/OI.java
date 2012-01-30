@@ -1,6 +1,8 @@
 
 package com.slidellrobotics.tigerrobotics.highshot;
 
+import com.slidellrobotics.tigerrobotics.highshot.commands.HighGear;
+import com.slidellrobotics.tigerrobotics.highshot.commands.LowGear;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -10,32 +12,60 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    private Joystick leftJoystick;
-    private Joystick rightJoystick;
-    private Button fireBall;
-    private Button shiftGear;
+    private Joystick leftJoystick; //Left Joystick
+    private Joystick rightJoystick; //Right Joystick
+    private Button fireBall; //Button to fire the ball
+    private Button shiftHighGear; //Button to shift to High Gear
+    private Button shiftLowGear; //Button to shift to Low Gear
     
     public OI() {
         leftJoystick = new Joystick(RobotMap.leftJoystick);
         rightJoystick = new Joystick(RobotMap.rightJoystick);
         fireBall = new JoystickButton(rightJoystick, RobotMap.fireButton);
-        shiftGear = new JoystickButton(leftJoystick, RobotMap.gearShiftButton);
+        shiftHighGear = new JoystickButton(leftJoystick, RobotMap.highGearShiftButton);
+        shiftLowGear = new JoystickButton(rightJoystick, RobotMap.lowGearShiftButton);
+        
+        shiftHighGear.whenPressed(new HighGear());
+        shiftLowGear.whenPressed(new LowGear());
     }
-    
+    /**
+     * Get the Left Joystick Object
+     * @return left joystick object
+     */
     public Joystick getLeftJoystick() {
         return leftJoystick;
     }
     
+    /**
+     * Get the Right Joystick Object
+     * @return right joystick object
+     */
     public Joystick getRightJoystick() {
         return rightJoystick;
     }
     
+    /**
+     * get Fire Button Object
+     * @return fire button object
+     */
     public Button getFireButton() {
         return fireBall;
     }
     
-    public Button getGearShift() {
-        return shiftGear;
+    /**
+     * get High Gear Shift Button
+     * @return high gear shift button
+     */
+    public Button getHighGearShift() {
+        return shiftHighGear;
+    }
+    
+    /**
+     * get Low Gear Shift Button
+     * @return low gear shift button 
+     */
+    public Button getLowGearShift() {
+        return shiftLowGear;
     }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

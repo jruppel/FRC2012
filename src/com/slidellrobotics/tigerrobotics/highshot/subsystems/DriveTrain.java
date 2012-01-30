@@ -5,6 +5,7 @@
 package com.slidellrobotics.tigerrobotics.highshot.subsystems;
 
 import com.slidellrobotics.tigerrobotics.highshot.RobotMap;
+import com.slidellrobotics.tigerrobotics.highshot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -27,6 +28,7 @@ public class DriveTrain extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new TankDrive());
     }
     
     public void drive(double leftSpeed, double rightSpeed) {
