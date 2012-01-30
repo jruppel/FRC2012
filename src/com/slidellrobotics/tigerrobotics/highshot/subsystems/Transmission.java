@@ -5,6 +5,7 @@
 package com.slidellrobotics.tigerrobotics.highshot.subsystems;
 
 import com.slidellrobotics.tigerrobotics.highshot.RobotMap;
+import com.slidellrobotics.tigerrobotics.highshot.commands.AutoTransmission;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -13,13 +14,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * @author gixxy
  */
 public class Transmission extends Subsystem {
-    DoubleSolenoid gearShifter = new DoubleSolenoid(RobotMap.gearSolinoid, RobotMap.gearSolinoid);
+    DoubleSolenoid gearShifter = new DoubleSolenoid(RobotMap.gearSolinoid, RobotMap.gearSolinoid+1);
     boolean currentGear; //true == HighGear
     // Put methods for controlling this subsystem
     // here. Call these from Commands.    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+        //setDefaultCommand(new AutoTransmission());
     }
     
     public void setHighGear() {
