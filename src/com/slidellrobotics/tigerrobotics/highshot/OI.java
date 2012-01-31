@@ -12,22 +12,17 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    private Joystick leftJoystick; //Left Joystick
-    private Joystick rightJoystick; //Right Joystick
-    private Button fireBall; //Button to fire the ball
-    private Button shiftHighGear; //Button to shift to High Gear
-    private Button shiftLowGear; //Button to shift to Low Gear
+    private Joystick leftJoystick = new Joystick(RobotMap.leftJoystick); //Left Joystick
+    private Joystick rightJoystick = new Joystick(RobotMap.rightJoystick); //Right Joystick
+    private Button fireBall = new JoystickButton(rightJoystick, RobotMap.fireButton); //Button to fire the ball
+    private Button shiftHighGear = new JoystickButton(rightJoystick, RobotMap.highGearShiftButton); //Button to shift to High Gear
+    private Button shiftLowGear = new JoystickButton(rightJoystick, RobotMap.lowGearShiftButton); //Button to shift to Low Gear
     
     public OI() {
-        leftJoystick = new Joystick(RobotMap.leftJoystick);
-        rightJoystick = new Joystick(RobotMap.rightJoystick);
-        fireBall = new JoystickButton(rightJoystick, RobotMap.fireButton);
-        shiftHighGear = new JoystickButton(leftJoystick, RobotMap.highGearShiftButton);
-        shiftLowGear = new JoystickButton(rightJoystick, RobotMap.lowGearShiftButton);
-        
         shiftHighGear.whenPressed(new HighGear());
         shiftLowGear.whenPressed(new LowGear());
     }
+    
     /**
      * Get the Left Joystick Object
      * @return left joystick object

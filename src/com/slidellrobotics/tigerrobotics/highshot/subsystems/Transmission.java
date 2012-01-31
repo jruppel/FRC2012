@@ -5,8 +5,8 @@
 package com.slidellrobotics.tigerrobotics.highshot.subsystems;
 
 import com.slidellrobotics.tigerrobotics.highshot.RobotMap;
-import com.slidellrobotics.tigerrobotics.highshot.commands.AutoTransmission;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -34,7 +34,7 @@ public class Transmission extends Subsystem {
         currentGear = false;
     }
     
-    public boolean getGear() {
-        return currentGear;
+    public Value getGear() {
+        return gearShifter.get();
     }
 }
