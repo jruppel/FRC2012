@@ -3,6 +3,7 @@ package com.slidellrobotics.tigerrobotics.highshot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.slidellrobotics.tigerrobotics.highshot.OI;
+import com.slidellrobotics.tigerrobotics.highshot.subsystems.Accelerometer;
 import com.slidellrobotics.tigerrobotics.highshot.subsystems.DriveTrain;
 import com.slidellrobotics.tigerrobotics.highshot.subsystems.Transmission;
 
@@ -18,7 +19,8 @@ public abstract class CommandBase extends Command {
     // Create a single static instance of all of your subsystems
     public static DriveTrain driveTrain = new DriveTrain();
     public static Transmission transmission = new Transmission();
-
+    public static Accelerometer accelerometer = new Accelerometer();
+    
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
