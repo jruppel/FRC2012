@@ -4,6 +4,8 @@
  */
 package com.slidellrobotics.tigerrobotics.highshot.commands;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+
 
 /**
  *
@@ -28,7 +30,7 @@ public class HighGear extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(transmission.getGear() == true) {
+        if(transmission.getGear().equals(Value.kForward)) {
             return(true);
         } else {
             return(false);

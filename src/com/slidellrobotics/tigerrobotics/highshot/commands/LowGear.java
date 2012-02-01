@@ -29,7 +29,7 @@ public class LowGear extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(transmission.getGear() == false) {
+        if(transmission.getGear().equals(Value.kReverse)) {
             return(true);
         } else {
             return(false);

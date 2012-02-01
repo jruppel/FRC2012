@@ -1,1 +1,15 @@
 This code is for the 2012 FIRST Robotics FRC game "Rebound Rumble".
+
+Known Todo Currently:
+1. Setup/Control Motor for Lazy Susan. (need to know what ports and setup commands)
+	Person in charge of this: None (e-mail Gus to take this up)
+2. Setup/Control Phumatics for Shooting Piston (need to know what ports and setup commands)
+	Person in charge of this: None (e-mail Gus to take this up)
+3. Accelerometers (also may wnat to use this with the Transmission.)
+	Person in charge of this: Johnathan
+4. Gyros
+	Person in charge of this: Gus
+5. Camera/Target Tracking
+	Person in charge of this: Allister
+6. Transmission (need to test which 
+	Person in charge of this: Gus
