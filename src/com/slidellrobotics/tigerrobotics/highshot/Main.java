@@ -8,10 +8,10 @@
 package com.slidellrobotics.tigerrobotics.highshot;
 
 
+import com.slidellrobotics.tigerrobotics.highshot.commands.CommandBase;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import com.slidellrobotics.tigerrobotics.highshot.commands.CommandBase;
 
 /**
  * The VM is configured to automatically run this class, and to call the
