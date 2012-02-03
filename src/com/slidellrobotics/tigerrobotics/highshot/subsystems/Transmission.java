@@ -37,4 +37,12 @@ public class Transmission extends Subsystem {
     public Value getGear() {
         return gearShifter.get();
     }
+    
+    public String getGearString() {
+        if(getGear() == Value.kForward) {
+            return "High Gear";
+        } else {
+            return "Low Gear";
+        }
+    }
 }

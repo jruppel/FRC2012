@@ -6,6 +6,7 @@ import com.slidellrobotics.tigerrobotics.highshot.OI;
 import com.slidellrobotics.tigerrobotics.highshot.subsystems.Accelerometer;
 import com.slidellrobotics.tigerrobotics.highshot.subsystems.DriveTrain;
 import com.slidellrobotics.tigerrobotics.highshot.subsystems.Transmission;
+import com.slidellrobotics.tigerrobotics.highshot.subsystems.TheDash;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command {
     public static DriveTrain driveTrain = new DriveTrain();
     public static Transmission transmission = new Transmission();
     public static Accelerometer accelerometer = new Accelerometer();
+    public static TheDash theDash = new TheDash();
     
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -29,7 +31,7 @@ public abstract class CommandBase extends Command {
         // news. Don't move it.
         oi = new OI();
 
-        // Show what command your subsystem is running on the SmartDashboard
+        // Show what command your subsystem is running on the TheDash
         
     }
 
