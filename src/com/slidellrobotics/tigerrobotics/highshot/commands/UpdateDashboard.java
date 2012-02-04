@@ -25,6 +25,7 @@ public class UpdateDashboard extends CommandBase {
     protected void execute() {
         theDash.log(transmission.getGearString(), "Gear");
         theDash.log(driveTrain.getLeftSpeed(), "Left Speed");
+       
         theDash.log(driveTrain.getRightSpeed(), "Right Speed");
         updated = true;
     }

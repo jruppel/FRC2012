@@ -3,6 +3,8 @@
  * and open the template in the editor.
  */
 package com.slidellrobotics.tigerrobotics.highshot.commands;
+
+import edu.wpi.first.wpilibj.ADXL345_I2C;
 import java.util.Date;
 
 /**
@@ -10,25 +12,25 @@ import java.util.Date;
  * @author Jeff
  */
 public class ProcessAccelerometer extends CommandBase {
-    
-    double newAcceleration;
+
     double timespan;
     long lastTime;
     double velocityX;
-    double velocityY;
+    protected double velocityY;
     Date date;
-    
+    ADXL345_I2C.AllAxes allaxes;
     
     public ProcessAccelerometer() {
         // Use requires() here to declare subsystem dependencies
-    requires(accelerometer);
-    newAcceleration = 0;
-    timespan = .02;
-    velocityX = 0;
-    velocityY = 0;
-    date = new Date();
-    lastTime = date.getTime(); // time in ms
-    //newVelocity = 0;
+        requires(accelerometer);
+        
+        timespan = .02;
+        velocityX = 0;
+        velocityY = 0;
+        date = new Date();
+        lastTime = date.getTime(); // time in ms
+
+        //newVelocity = 0;
     }
 
     // Called just before this Command runs the first time
@@ -37,12 +39,12 @@ public class ProcessAccelerometer extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        
-        //newAcceleration = accelerometer.getAccelerationX();
-        velocityX = velocityX + newAcceleration * timespan;
-        velocityY = velocityY + newAcceleration * timespan;
-        
-    }
+        timespan = date.getTime() - lastTime;
+        allaxes = accelerometer.GetAcceleration();
+        velocityX = velocityX + allaxes.XAxis * timespan;
+        velocityY = velocityY + allaxes.YAxis * timespan;
+        theDash.log(velocityX,"X");
+     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
