@@ -5,8 +5,9 @@
 package com.slidellrobotics.tigerrobotics.highshot.subsystems;
 
 import com.slidellrobotics.tigerrobotics.highshot.commands.UpdateDashboard;
-import edu.wpi.first.wpilibj.SmartDashboard;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
